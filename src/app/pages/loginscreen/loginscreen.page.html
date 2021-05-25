@@ -1,54 +1,63 @@
 <ion-header class="ion-no-border">
+
   <ion-toolbar>
     <!-- <ion-title>loginscreen</ion-title> -->
   </ion-toolbar>
 
   <ion-buttons slot="start">
-  <ion-back-button defaulthref="login"></ion-back-button>
+
+    <ion-back-button defaulthref="login"></ion-back-button>
 
   </ion-buttons>
 
 </ion-header>
 
 <ion-content>
+    
+  <ion-card class="ion-no-margin">
 
-  <ion-card>
-      <ion-img src="../../assets/images/header1.png"></ion-img>
+    <ion-card-header>
+
+      <ion-card-title>𝓦𝒆𝓵𝓬𝓸𝓶𝒆 ℬ𝓪𝓬𝓴</ion-card-title>
+      <ion-card-subtitle>𝒲𝑒 𝓂𝒾𝓈𝓈𝑒𝒹 𝓎𝑜𝓊 ♥</ion-card-subtitle>
+
+    </ion-card-header>
     
 
-    <ion-card-content>
+    <ion-card-content class="bg-color">
 
-      <div class="wrapform">
+      <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.valid)">
 
-        <ion-item>
-          
-          <ion-input type="text" name="email" [ngModel]="email" placeholder="Email" required>
-            <ion-icon name="mail-outline"></ion-icon>
-          </ion-input>
-          
-        </ion-item>
+        <div class="wrapform">
+          <ion-item>
+            
+            <ion-input type="text" name="email" formControlName="email" [ngModel]="email" placeholder="Email" required>
+              <ion-icon name="mail-outline"></ion-icon>
+            </ion-input>
+            
+          </ion-item>
 
 
-        <ion-item>
-          
-          <ion-input type="password" name="password" [ngModel]="password" placeholder="********" required>
-            <ion-icon name="lock-closed-outline"></ion-icon>
-          </ion-input>
+          <ion-item>
+            
+            <ion-input type="password" name="password" formControlName="password"  [ngModel]="password" placeholder="********" required>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </ion-input>
 
-        </ion-item>
+          </ion-item>
+        </div>
 
-      </div>
 
       <div class="password_forgot">
-        <ion-button fill="clear" class="ion-no-padding">Forgot Password?</ion-button>
+        <ion-button fill="clear" class="ion-no-padding">Forgot Password ?</ion-button>
       </div>
 
-      <div class="sign-btn-wrap">
-        <ion-button shape="round" fill="solid" class="sign-btn">Login</ion-button>
+      <div class="login-btn-wrap">
+        <ion-button shape="round" fill="solid" class="login-btn" [disabled]="!validationFormUser.valid">Login</ion-button>
       </div>
 
       <div class="text-tag">
-        <span>Or via Social Media</span>
+        <span>𝐎𝐫 𝐯𝐢𝐚 𝐒𝐨𝐜𝐢𝐚𝐥 𝐌𝐞𝐝𝐢𝐚</span>
       </div>
 
       <div class="social-btns">
@@ -67,14 +76,17 @@
 
       </div>
 
+    </form>
     </ion-card-content>
+
+    <div class="ion-card-footer">
+
+      <span>𝐃𝐨𝐧'𝐭 𝐡𝐚𝐯𝐞 𝐚𝐧 𝐚𝐜𝐜𝐨𝐮𝐧𝐭?</span>
+      <button class="ion-no-padding" href="/signup">𝑺𝒊𝒈𝒏-𝒖𝒑</button>
+      
+    </div>
   </ion-card>
 
-  <div class="ion-card-footer">
-
-    <span>Don't have an account?</span>
-    <button class="ion-no-padding">Sign-up</button>
-    
-  </div>
+  
 
 </ion-content>

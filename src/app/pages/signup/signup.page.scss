@@ -1,0 +1,104 @@
+ion-header{
+    position: absolute;
+}
+
+ion-toolbar{
+    --ion-background-color: transparent;
+    --opacity:0;
+}
+
+ion-content{
+    --ion-background-color: #E1EAF9;
+}
+
+.bg-color{
+    background: #f0f0f0;
+}
+
+ion-card{
+    --ion-background-color: transparent;
+        box-shadow: none !important;
+        background: url('../../../assets/images/nature.jpg');
+        height: 100vh;
+        width:100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+ion-card-title{
+    margin-top: 30px !important;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+}
+
+ion-card-subtitle{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 15px;
+    color: #b49c9c;
+    font-weight: 400;
+    text-transform: none; /*Remove the uppercase which was in default*/
+}
+
+ion-card-content{
+    padding-top: 50px;
+}
+
+ion-item{
+    color: #74787E;
+    --border-color: #D4D7DB;
+    --highlight-color-focused:#215AB7;
+    --padding-start:0;
+    --inner-padding-end:0;
+    font-size: 20px;
+    ion-input{
+        color: #ffffff;
+    }
+    ion-icon{
+        padding-right: 10px;
+        font-size: 25px;
+    }
+    ion-input:hover{
+        color: #000000;
+        font-size: 20px;
+    }
+}
+
+.sign-btn-wrap{
+    text-align: center;
+    padding-top: 30px;
+    
+    .sign-btn{
+        margin-top: 50px;
+        margin-bottom: 10px;
+        --ion-primary-color: #d18125;
+        --background-activated: #E1EAF9;
+        --background-focused: #EAEAF9;
+        --background-hover: #d18125;
+        color: #F4F6FA;
+        border-radius: 25px;
+        --background: #c92830;
+        background-color: #c04161;
+    }
+}
+
+.text-tag{
+    margin-top: 8px;
+    text-align: center;
+    span{
+        font-size: 13px;
+        font-weight: normal;
+        color: #ffffff;
+    }
+}
+
+.social-btns{
+    margin-top: 4px;
+    text-align: center;
+    ion-button{
+        width:40px;
+        padding-left: 5px !important;
+    }
+}
