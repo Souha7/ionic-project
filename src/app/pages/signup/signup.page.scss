@@ -49,7 +49,7 @@ ion-card-content{
 ion-item{
     color: #74787E;
     --border-color: #D4D7DB;
-    --highlight-color-focused:#215AB7;
+    --highlight-color-focused:#fec3a6;
     --padding-start:0;
     --inner-padding-end:0;
     font-size: 20px;
@@ -61,7 +61,7 @@ ion-item{
         font-size: 25px;
     }
     ion-input:hover{
-        color: #000000;
+        color: #f07167;
         font-size: 20px;
     }
 }
@@ -73,14 +73,13 @@ ion-item{
     .sign-btn{
         margin-top: 50px;
         margin-bottom: 10px;
-        --ion-primary-color: #d18125;
+        --ion-primary-color: #e71d36;
         --background-activated: #E1EAF9;
         --background-focused: #EAEAF9;
-        --background-hover: #d18125;
+        --background-hover: #e71d36;
         color: #F4F6FA;
         border-radius: 25px;
-        --background: #c92830;
-        background-color: #c04161;
+        --background: #f07167;
     }
 }
 

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import{AuthService} from 'src/app/services/auth.service';
 
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+ 
 @Component({
   selector: 'app-loginscreen',
   templateUrl: './loginscreen.page.html',
@@ -12,11 +16,11 @@ export class LoginscreenPage implements OnInit {
   validationUserMessage ={
     email:[
       {type:"required", message:"Please enter your Email"},
-      {type:"pattern", message:"The Email entered is Incorrect.Try again"}
+      {type:"pattern", message:"The Email entered is Incorrect.Please Try again ♥"}
     ],
     password:[
-      {type:"required", message:"please Enter your Password!"},
-      {type:"minlength", message:"The Password must be at least 5 characters or more"}
+      {type:"required", message:"Please Enter your Password"},
+      {type:"minlength", message:"The Password must be at least 3 characters"}
 
     ]
   }
@@ -25,7 +29,7 @@ export class LoginscreenPage implements OnInit {
 
 validationFormUser: FormGroup;
 
-  constructor(public formbuilder: FormBuilder) { }
+  constructor(public formbuilder: FormBuilder, public authservice: AuthService) { }
 
   ngOnInit() {
     this.validationFormUser = this.formbuilder.group({
@@ -35,14 +39,23 @@ validationFormUser: FormGroup;
       ])),
       password: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(3)
       ]))
     })
   }
     LoginUser(value){
-      console.log("You're logged in")
-    }
+      console.log("You're logged in");
 
+      try{
+        this.authservice.loginFireauth(value).then( resp =>{
+          console.log(resp);
+        })
+
+      }catch(err){
+        console.log(err);
+      } 
   }
+
+}
 
 
