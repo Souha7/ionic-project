@@ -9,14 +9,15 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginscreenPage implements OnInit {
 
-  ValidationUserMessage ={
+  validationUserMessage ={
     email:[
-      {type:"required", message:"Please Enter your Email"},
-      {type:"pattern", message:"The Email entered is Incorrect,please Try again"}
+      {type:"required", message:"Please enter your Email"},
+      {type:"pattern", message:"The Email entered is Incorrect.Try again"}
     ],
     password:[
-      {type:"required", message:"Please Enter your Password"},
-      {type:"minlength", message:"The Password must be at least 5 Character"}
+      {type:"required", message:"please Enter your Password!"},
+      {type:"minlength", message:"The Password must be at least 5 characters or more"}
+
     ]
   }
 
@@ -30,11 +31,11 @@ validationFormUser: FormGroup;
     this.validationFormUser = this.formbuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]@[a-zA-Z0-9-]+.[a-zA-Z0-9_.]+$')
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       password: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(5)
       ]))
     })
   }

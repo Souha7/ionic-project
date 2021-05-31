@@ -14,7 +14,7 @@ ion-content{
 ion-card{
     --ion-background-color: transparent;
         box-shadow: none !important;
-        background-image: url('../../../assets/images/sunset2.jpg');
+        background-image: url('../../../assets/images/peace.jpg');
         height: 100vh;
         width:100%;
         background-repeat: no-repeat;
@@ -22,79 +22,81 @@ ion-card{
 }
 
 ion-card-title{
-    margin-top: 60px !important;
-    font-size: 38px;
-    color: #bb3e03;
+    margin-top: 24px !important;
+    font-size: 39px;
+    color: #B7094C;
     text-align: center;
     font-weight: 600;
-    font-family: Georgia,"Times New Roman",serif;;
 }
 
 ion-card-subtitle{
     text-align: center;
-    padding-top: 5px;
-    font-size: 15px;
-    color: #e6ccb2;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #892B64;
     font-weight: 400;
     text-transform: none; 
 }
 
-.account,p{
-    margin-top: 130px;
+.account p{
+    margin-top: 80px;
     text-align: center;
     font-size: 19px;
-    color: #e6ccb2;
+    color: #641220;
 }
 
 .signin-btns{
-    margin-top: 5px;;
+    margin-top: 20px;;
     text-align: center;
     .sign-btn{
-        --ion-primary-color: #d18125;
+        --ion-primary-color: #F8AD9D;
         --background-activated: #E1EAF9;
         --background-focused: #EAEAF9;
-        --background-hover: #d18125;
-        color: #F4F6FA;
+        --background-hover: #F8AD9D;
+        color: #641220;
         border-radius: 25px;
-        --background: #bb3e03;
-        background-color: #d4a373;
+        --background: #F8AD9D;
     }
 
     ion-button:hover{
-        color: #000000;
+        color: #EAEAF9;
     }
-}
-
-ion-card{
-    --ion-background-color:transparent;
-    box-shadow: none !important;
 }
 
 .already p{
     margin-top: 20px;
     text-align: center;
-    font-size: 19px;
-    color: #e6ccb2;
+    font-size: 18px;
+    color: #641220;
 }
 
 .login{
-    margin-top: 5px;
+    margin-top: 20px;
     text-align: center;
 
     .login-btn{
-        --ion-primary-color: #d18125;
+        --ion-primary-color: #F8AD9D;
         --background-activated: #E1EAF9;
         --background-focused: #EAEAF9;
-        --background-hover: #d18125;
-        color: #F4F6FA;
+        --background-hover: #F8AD9D;
+        color: #641220;
         border-radius: 25px;
-        --background: #bb3e03;
-        background-color: #d4a373;
+        --background: #F8AD9D;
     }
 
     ion-button:hover{
-        color: #000000;
+        color: #EAEAF9;
     }
 }
 
+.souha{
+    margin-top: 80px;
+    text-align: center;
+    font-size: 17px;
+    color: #892B64;
+
+    strong{
+        color:#F8AD9D;
+    }
+}
 
