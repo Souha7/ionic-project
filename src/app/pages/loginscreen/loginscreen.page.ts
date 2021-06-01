@@ -29,7 +29,7 @@ export class LoginscreenPage implements OnInit {
 
 validationFormUser: FormGroup;
 
-  constructor(public formbuilder: FormBuilder, public authservice: AuthService) { }
+  constructor(public formbuilder: FormBuilder, public authservice: AuthService,private router: Router) { }
 
   ngOnInit() {
     this.validationFormUser = this.formbuilder.group({
@@ -49,6 +49,7 @@ validationFormUser: FormGroup;
       try{
         this.authservice.loginFireauth(value).then( resp =>{
           console.log(resp);
+          this.router.navigate(['tabs'])
         })
 
       }catch(err){
