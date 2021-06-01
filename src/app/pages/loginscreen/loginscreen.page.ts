@@ -32,11 +32,14 @@ validationFormUser: FormGroup;
   constructor(public formbuilder: FormBuilder, public authservice: AuthService,private router: Router) { }
 
   ngOnInit() {
+
     this.validationFormUser = this.formbuilder.group({
+
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
+      
       password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(3)
