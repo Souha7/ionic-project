@@ -48,9 +48,11 @@ validationFormUser: FormGroup;
   }
     LoginUser(value){
       console.log("You're logged in");
+      
 
       try{
         this.authservice.loginFireauth(value).then( resp =>{
+          localStorage.setItem("userId", resp.user.uid);
           console.log(resp);
           this.router.navigate(['tabs'])
         })

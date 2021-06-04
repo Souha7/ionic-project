@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -37,6 +37,14 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
     canActivate : [AuthGuard]
+  },
+  {
+    path: 'add-new-task',
+    loadChildren: () => import('./pages/add-new-task/add-new-task.module').then( m => m.AddNewTaskPageModule)
+  },
+  {
+    path: 'update-task',
+    loadChildren: () => import('./pages/update-task/update-task.module').then( m => m.UpdateTaskPageModule)
   },
 ];
 

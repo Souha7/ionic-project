@@ -64,7 +64,7 @@
         <div class="form-group">
           <ion-item>
 
-            <ion-input  type="password"
+            <ion-input [type]= "showpassword ? 'text' : 'password' "
                       class="form-control"
                       id="formGroupPassword"
                       placeholder="*******" 
@@ -73,6 +73,7 @@
               <ion-icon name="lock-closed"></ion-icon>
 
             </ion-input>
+            <ion-icon slot="end" [name] = "passwordToggleIcon" (click)="togglePassword()"></ion-icon>
 
           </ion-item>
 

@@ -92,5 +92,19 @@ export class SignupPage {
   })
    load.present();
  }
+
+ showpassword = false;
+ passwordToggleIcon = 'eye';
+
+ togglePassword():void {
+   this.showpassword = !this.showpassword;
+
+   if(this.passwordToggleIcon == 'eye') {
+     this.passwordToggleIcon = 'eye-off';
+   }else{
+     this.passwordToggleIcon = 'eye';
+   }
+ }
+
  
  }

@@ -1,15 +1,18 @@
 ion-content{
-    --ion-background-color:#d1d2d4;
+    --background-color: #F0F4FD;
 }
-  
-  
-.wrappContent {
 
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    
+p{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 50px;
+    margin: 0;
+}
+
+ion-fab-button{
+    --ion-primary-color: #e71d36;
+    --background-activated: #E1EAF9;
+    --background-focused: #EAEAF9;
+    --background-hover: #e71d36;
+    --background: #f07167;
 }
