@@ -61,4 +61,9 @@ export class HomePage {
     
     return await modal.present()
   }
+
+  async checked(task, deletedValue) {
+    task.value.deleted = deletedValue;
+    await this.todoService.updateTask(task.key, task.value)
+  }
 }

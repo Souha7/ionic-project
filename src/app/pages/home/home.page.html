@@ -5,8 +5,8 @@
     <ion-item lines="none">
 
       <ion-label style="font-weight:500px; font-size:2em">
-        Today
-        <p style="font-weight:400px; color: #f07167">{{today | date:'fullDate'}}</p>
+        𝓣𝓸𝓭𝓪𝔂
+        <p style="font-weight:400px; color: #00b4d8">{{today | date:'fullDate'}}</p>
       </ion-label>
 
     </ion-item>
@@ -16,49 +16,54 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card *ngFor="let item of todoList; let i = index" class="ion-margin">
+  <div class="bg-img">
 
-    <ion-card-header>
-    
-      <ion-card-subtitle [style.color]="item.value.itemPriority === 'high' ? 'red' : (item.value.itemPriority === 'low' ? 'green' : 'orange')">
-        {{item.value.itemCategory}}
-      </ion-card-subtitle>
+    <ion-card *ngFor="let item of todoList; let i = index" class="ion-margin">
 
-      <ion-item>
+      <ion-card-header>
+      
+        <ion-card-subtitle style="color:aqua">
+        <!-- <ion-card-subtitle [style.color]="item.value.itemPriority === 'high' ? 'red' : (item.value.itemPriority === 'low' ? 'green' : 'orange')"> -->
+          {{item.value.itemCategory}}
+        </ion-card-subtitle>
 
-        <ion-icon *ngIf="item.value.itemPriority === 'high'" color="danger" size="small" name="ellipse"></ion-icon>
-        <ion-icon *ngIf="item.value.itemPriority === 'low'" color="success" size="small" name="ellipse"></ion-icon>
-        <ion-icon *ngIf="item.value.itemPriority === 'middle'" color="warning" size="small" name="ellipse"></ion-icon>
+        <ion-item lines="none">
 
-        <ion-label> {{ item.value.itemName}}</ion-label>
+          <ion-checkbox *ngIf="item.value.deleted === true" checked (click)="checked(item, false)" color="primary" slot="start"></ion-checkbox>
+          <ion-checkbox *ngIf="item.value.deleted === false" (click)="checked(item, true)" color="primary" slot="start"></ion-checkbox>
+          <!-- <ion-icon *ngIf="item.value.itemPriority === 'high'" color="danger" size="small" name="ellipse"></ion-icon> -->
+          <!-- <ion-icon *ngIf="item.value.itemPriority === 'low'" color="success" size="small" name="ellipse"></ion-icon> -->
+          <!-- <ion-icon *ngIf="item.value.itemPriority === 'middle'" color="warning" size="small" name="ellipse"></ion-icon> -->
+          <ion-label> {{ item.value.itemName}}</ion-label>
 
-      </ion-item>
+        </ion-item>
 
-    </ion-card-header>
+      </ion-card-header>
 
-    <ion-card-content>
-      <ion-label>Due {{item.value.itemDueDate | date:'fullDate'}}</ion-label>
-    </ion-card-content>
+      <ion-card-content>
+        <ion-label>For {{item.value.itemDueDate | date:'fullDate'}}</ion-label>
+      </ion-card-content>
 
-    <ion-row>
-    
-      <ion-item button (click)="update(item)">
+      <ion-row>
+      
+        <ion-item button (click)="update(item)">
 
-        <ion-icon name="create-outline"></ion-icon>
-        <p>Update</p>
+          <ion-icon name="create-outline" style="color: #00b4d8"></ion-icon>
+          <p>Update</p>
 
-      </ion-item>
+        </ion-item>
 
-      <ion-item button (click)="delete(item.key)">
+        <ion-item button (click)="delete(item.key)">
 
-        <ion-icon name="trash-outline"></ion-icon>
-        <p>Cancel</p>
+          <ion-icon name="trash-outline" style="color: #00b4d8"></ion-icon>
+          <p>Cancel</p>
 
-      </ion-item>
+        </ion-item>
 
-    </ion-row>
+      </ion-row>
 
-  </ion-card>
+    </ion-card>
+  </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
 
@@ -67,5 +72,4 @@
     </ion-fab-button>
 
   </ion-fab>
-  
 </ion-content>

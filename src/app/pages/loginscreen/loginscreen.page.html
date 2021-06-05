@@ -51,9 +51,17 @@
 
           <ion-item>
 
-            <ion-input type="password" name="password" formControlName="password"  placeholder="**************" >
+            <ion-input  [type]= "showpassword ? 'text' : 'password' " 
+                        class="form-control"
+                        name="password" 
+                        formControlName="password"  
+                        placeholder="**************" >
+
               <ion-icon name="lock-closed"></ion-icon>
+
             </ion-input>
+            
+              <ion-icon slot="end" [name] = "passwordToggleIcon" (click)="togglePassword()"></ion-icon>
 
           </ion-item>
 
@@ -70,34 +78,11 @@
 
         </div>
 
-
-        <div class="password_forgot">
-            <ion-button fill="clear" class="ion-no-padding">𝙁𝙤𝙧𝙜𝙤𝙩 𝙋𝙖𝙨𝙨𝙬𝙤𝙧𝙙 ?</ion-button>
-        </div>
-
         <div class="login-btn-wrap">
           <ion-button  shape="round" type="submit"  fill="solid" class="login-btn"><span>𝑳𝒐𝒈𝒊𝒏</span></ion-button>
         </div>
 
-        <div class="text-tag">
-          <span>𝐎𝐫 𝐯𝐢𝐚 𝐒𝐨𝐜𝐢𝐚𝐥 𝐌𝐞𝐝𝐢𝐚</span>
-        </div>
-
-        <div class="social-btns">
-
-          <ion-button fill="clear"
-                      class="facebookbtn ion-no-padding">
-
-            <ion-img src="../../assets/images/facebook.png"></ion-img>
-          </ion-button>
-
-          <ion-button fill="clear"
-                      class="googlebtn ion-no-padding">
-                      
-            <ion-img src="../../assets/images/google.png"></ion-img>
-          </ion-button>
-
-        </div>
+        
 
       </form>
 
@@ -106,7 +91,8 @@
     <div class="ion-card-footer">
 
       <span>𝐃𝐨𝐧'𝐭 𝐡𝐚𝐯𝐞 𝐚𝐧 𝐚𝐜𝐜𝐨𝐮𝐧𝐭?</span>
-      <button class="ion-no-padding" href="/signup">𝑺𝒊𝒈𝒏-𝒖𝒑</button>
+      
+      <button  class="ion-no-padding" [routerLink] = "['/signup']">𝑺𝒊𝒈𝒏-𝒖𝒑</button>
       
     </div>
 

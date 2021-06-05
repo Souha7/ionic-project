@@ -1,0 +1,19 @@
+
+
+ion-toolbar{
+    --ion-background-color: transparent;
+    --opacity:0;
+}
+
+ion-content{
+    --ion-background-color: #E1EAF9;
+}
+
+.bg-img {
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../assets/images/simple_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

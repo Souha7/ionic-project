@@ -39,7 +39,8 @@ export class AddNewTaskPage implements OnInit {
       itemDueDate: this.itemDueDate,
       itemPriority: this.itemPriority,
       itemCategory: this.categorySelectedCategory,
-      userId: localStorage.getItem("userId")
+      userId: localStorage.getItem("userId"),
+      deleted: false
     });
 
     let uid = this.itemName + this.itemDueDate

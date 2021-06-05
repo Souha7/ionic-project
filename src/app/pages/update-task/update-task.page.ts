@@ -21,6 +21,7 @@ export class UpdateTaskPage implements OnInit {
   itemDueDate 
   itemPriority
   itemCategory
+  deleted
 
   constructor(public modalCtlr:ModalController, public todoServive:TodoService) { }
 
@@ -33,6 +34,7 @@ export class UpdateTaskPage implements OnInit {
     this.itemDueDate = this.task.value.itemDueDate
     this.itemPriority = this.task.value.itemPriority
     this.categorySelectedCategory = this.task.value.itemCategory
+    this.deleted = this.task.value.deleted
     // console.log(this.task);
     
     
@@ -52,7 +54,8 @@ export class UpdateTaskPage implements OnInit {
       itemDueDate:this.itemDueDate,
       itemPriority:this.itemPriority,
       itemCategory:this.categorySelectedCategory,
-      userId: localStorage.getItem("userId")
+      userId: localStorage.getItem("userId"),
+      delted: this.deleted
     });
     let uid = this.task.key
     await this.todoServive.updateTask(uid,this.newTaskObj)

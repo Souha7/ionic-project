@@ -18,98 +18,80 @@
     </ion-card-header>
 
     <form [formGroup]="ValidationFormUSer" (ngSubmit)="registerUser(ValidationFormUSer.value)">
-    <ion-card-content>
+      <ion-card-content>
 
-        <div class="form-group">
-          <ion-item>
+          <div class="form-group">
+            <ion-item>
 
-            <ion-input  type="text"
+              <ion-input  type="text"
+                          class="form-control"
+                          id="formGroupName"
+                          placeholder="Name" 
+                          formControlName="name">
+
+                <ion-icon name="person-outline"></ion-icon>
+
+              </ion-input>
+
+            </ion-item>
+
+            <small class="error_message" *ngIf="ValidationFormUSer.get('name').hasError('required')">This Field is required !</small>
+            <small class="error_message" *ngIf="ValidationFormUSer.get('name').hasError('minlength')">The minimum length for this field is 3 characters !</small>
+            
+          </div>
+    
+    
+          <div class="form-group">
+            <ion-item>
+
+              <ion-input  type="email"
                         class="form-control"
-                        id="formGroupName"
-                        placeholder="Name" 
-                        formControlName="name">
+                        id="formGroupExampleInput2"
+                        placeholder="Email" 
+                        formControlName="email">
 
-              <ion-icon name="person-outline"></ion-icon>
+                <ion-icon name="mail-outline"></ion-icon>
 
-            </ion-input>
+              </ion-input>
 
-          </ion-item>
+            </ion-item>
+            
+            <small class="error_message" *ngIf="ValidationFormUSer.get('email').hasError('required')">This Field is required !</small>
+            <small class="error_message" *ngIf="ValidationFormUSer.get('email').hasError('email')">You should put a valid Email !</small>
 
-          <small class="error_message" *ngIf="ValidationFormUSer.get('name').hasError('required')">This Field is required !</small>
-          <small class="error_message" *ngIf="ValidationFormUSer.get('name').hasError('minlength')">The minimum length for this field is 3 characters !</small>
-          
-        </div>
-  
-  
-        <div class="form-group">
-          <ion-item>
+          </div>
+    
+          <div class="form-group">
+            <ion-item>
 
-            <ion-input  type="email"
-                      class="form-control"
-                      id="formGroupExampleInput2"
-                      placeholder="Email" 
-                      formControlName="email">
+              <ion-input [type]= "showpassword ? 'text' : 'password' "
+                          class="form-control"
+                          id="formGroupPassword"
+                          placeholder="*******" 
+                          formControlName="password">
 
-              <ion-icon name="mail-outline"></ion-icon>
+                <ion-icon name="lock-closed"></ion-icon>
 
-            </ion-input>
+              </ion-input>
+              
+              <ion-icon slot="end" [name] = "passwordToggleIcon" (click)="togglePassword()"></ion-icon>
 
-          </ion-item>
-          
-          <small class="error_message" *ngIf="ValidationFormUSer.get('email').hasError('required')">This Field is required !</small>
-          <small class="error_message" *ngIf="ValidationFormUSer.get('email').hasError('email')">You should put a valid Email !</small>
+            </ion-item>
 
-        </div>
-  
-        <div class="form-group">
-          <ion-item>
+            <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('required')">This Field is required !</small>
+            <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('minlength')">The minimum length for this field is 3 !</small>
+            <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('maxlength')">The maximum length for this field is 15 !</small>
 
-            <ion-input [type]= "showpassword ? 'text' : 'password' "
-                      class="form-control"
-                      id="formGroupPassword"
-                      placeholder="*******" 
-                      formControlName="password">
+          </div>
 
-              <ion-icon name="lock-closed"></ion-icon>
-
-            </ion-input>
-            <ion-icon slot="end" [name] = "passwordToggleIcon" (click)="togglePassword()"></ion-icon>
-
-          </ion-item>
-
-          <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('required')">This Field is required !</small>
-          <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('minlength')">The minimum length for this field is 3 !</small>
-          <small class="error_message" *ngIf="ValidationFormUSer.get('password').hasError('maxlength')">The maximum length for this field is 15 !</small>
-
+        <div class="sign-btn-wrap">
+          <ion-button shape="round"
+                      fill="solid"
+                      type="submit"
+                      class="sign-btn">Sign-Up</ion-button>
         </div>
 
-      <div class="sign-btn-wrap">
-        <ion-button shape="round"
-                    fill="solid"
-                    type="submit"
-                    class="sign-btn">Sign-Up</ion-button>
-      </div>
-
-      <div class="text-tag">
-        <span>Sign-Up with</span>
-      </div>
-
-      <div class="social-btns">
-
-        <ion-button fill="clear"
-                    class="facebookbtn ion-no-padding">
-
-          <ion-img src="../../assets/images/facebook.png"></ion-img>
-        </ion-button>
-
-        <ion-button fill="clear"
-                    class="googlebtn ion-no-padding">
-                    
-          <ion-img src="../../assets/images/google.png"></ion-img>
-        </ion-button>
-      </div>
-      
-    </ion-card-content>
+      </ion-card-content>
     </form>
 
   </ion-card>

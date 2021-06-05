@@ -1,5 +1,6 @@
 ion-content{
     --background-color: #F0F4FD;
+    
 }
 
 p{
@@ -10,9 +11,18 @@ p{
 }
 
 ion-fab-button{
-    --ion-primary-color: #e71d36;
+    --ion-primary-color: #012a4a;
     --background-activated: #E1EAF9;
     --background-focused: #EAEAF9;
-    --background-hover: #e71d36;
-    --background: #f07167;
+    --background-hover: #012a4a;
+    --background: #00b4d8;
+}
+
+.bg-img {
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../assets/images/cat1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -1,0 +1,23 @@
+
+ion-toolbar{
+    --ion-background-color: transparent;
+    --opacity:0;
+}
+
+ion-content{
+    --ion-background-color: #E1EAF9;
+}
+
+.bg-color{
+    background: #f0f0f0;
+}
+
+ion-card{
+    --ion-background-color: transparent;
+        box-shadow: none !important;
+        background: url('../../../assets/images/blue.jpg');
+        height: 100%;
+        width:100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
